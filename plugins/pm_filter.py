@@ -75,7 +75,7 @@ async def filter(client, message):
         else:
             buttons = btn
             buttons.append(
-                [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages")]
+                [InlineKeyboardButton(text="📑 𝖯𝖺𝗀𝖾𝗌 1/1",callback_data="pages")]
             )
             poster=None
             if API_KEY:
@@ -97,10 +97,10 @@ async def filter(client, message):
         buttons = data['buttons'][0].copy()
 
         buttons.append(
-            [InlineKeyboardButton(text="NEXT ⏩",callback_data=f"next_0_{keyword}")]
+            [InlineKeyboardButton(text="📥 𝖭𝖾𝗑𝗍",callback_data=f"next_0_{keyword}")]
         )    
         buttons.append(
-            [InlineKeyboardButton(text=f"📃 Pages 1/{data['total']}",callback_data="pages")]
+            [InlineKeyboardButton(text=f"📑 𝖯𝖺𝗀𝖾𝗌 1/{data['total']}",callback_data="pages")]
         )
         poster=None
         if API_KEY:
@@ -151,7 +151,7 @@ async def group(client, message):
         else:
             buttons = btn
             buttons.append(
-                [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages")]
+                [InlineKeyboardButton(text="📑 𝖯𝖺𝗀𝖾𝗌 1/1",callback_data="pages")]
             )
             poster=None
             if API_KEY:
@@ -172,10 +172,10 @@ async def group(client, message):
         buttons = data['buttons'][0].copy()
 
         buttons.append(
-            [InlineKeyboardButton(text="NEXT ⏩",callback_data=f"next_0_{keyword}")]
+            [InlineKeyboardButton(text="📥 𝖭𝖾𝗑𝗍",callback_data=f"next_0_{keyword}")]
         )    
         buttons.append(
-            [InlineKeyboardButton(text=f"📃 Pages 1/{data['total']}",callback_data="pages")]
+            [InlineKeyboardButton(text=f"📑 𝖯𝖺𝗀𝖾𝗌 1/{data['total']}",callback_data="pages")]
         )
         poster=None
         if API_KEY:
@@ -300,7 +300,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('𝕊𝕠𝕦𝕣𝕔𝕖 ℂ𝕠𝕕𝕖', url='https://github.com/subinps/Media-Search-bot')
                 ]
                 ]
-            await query.message.edit(text="<b>Developer : <a href='https://t.me/M_VineshKumar'>Jonas</a>\nLanguage : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nSource Code : <a href='https://github.com/subinps/Media-Search-bot'>Click here</a>\nUpdate Channel : <a href='https://t.me/CinemaHaunter'>Cinema Haunter</a> </b>\nServer : <a href='https://heroku.com'>Heroku", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text="<b>Developer : <a href='https://t.me/M_VineshKumar'>Jonas</a>\nLanguage : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nSource Code : <a href='https://github.com/subinps/Media-Search-bot'>Click here</a>\nUpdate Channel : <a href='https://t.me/CinemaHaunter'>Cinema Haunter</a>\nServer : <a href='https://heroku.com'>Heroku</a></b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
 
 
@@ -321,8 +321,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     f_caption = f"{files.file_name}"
                 buttons = [
                     [
-                        InlineKeyboardButton('Admin', url='https://t.me/M_VineshKumar'),
-                        InlineKeyboardButton('Official Channel', url='https://t.me/CinemaHaunter)
+                        InlineKeyboardButton('𝔸𝕕𝕞𝕚𝕟', url='https://t.me/M_VineshKumar'),
+                        InlineKeyboardButton('𝕆𝕗𝕗𝕚𝕔𝕚𝕒𝕝 ℂ𝕙𝕒𝕟𝕟𝕖𝕝', url='https://t.me/CinemaHaunter)
                     ]
                     ]
                 
@@ -353,8 +353,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     f_caption = f"{title}"
                 buttons = [
                     [
-                        InlineKeyboardButton('Admin', url='https://t.me/M_VineshKumar'),
-                        InlineKeyboardButton('Official Channel', url='https://t.me/CinemaHaunter')
+                        InlineKeyboardButton('𝔸𝕕𝕞𝕚𝕟', url='https://t.me/M_VineshKumar'),
+                        InlineKeyboardButton('𝕆𝕗𝕗𝕚𝕔𝕚𝕒𝕝 ℂ𝕙𝕒𝕟𝕟𝕖𝕝', url='https://t.me/CinemaHaunter')
                     ]
                     ]
                 
