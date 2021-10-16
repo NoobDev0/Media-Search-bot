@@ -12,6 +12,7 @@ import os
 import PTN
 import requests
 import json
+import imdb
 from info import DATABASE_URI, DATABASE_NAME, COLLECTION_NAME, USE_CAPTION_FILTER, AUTH_CHANNEL, API_KEY
 DATABASE_URI_2=os.environ.get('DATABASE_URI_2', DATABASE_URI)
 DATABASE_NAME_2=os.environ.get('DATABASE_NAME_2', DATABASE_NAME)
@@ -224,6 +225,24 @@ async def get_all(list):
         year=y.get("Year")[:4]
         id=y.get("imdbID")
         await save_poster(id, v, year, poster)
+
+def get_details(movie):
+    reall = PTN.parse(movie)
+    wat = reall["title"]
+    ia = imdb.IMDb()
+    movie = ia.search_movie(wat)
+    x = movie[0]
+    id = x.movieID
+    info = ia.get_movie(id)
+    title = info["title"]
+    year = info["year"]
+    rating = info["rating"]
+    genre = info["genres"]
+    imdbl = "https://m.imdb.com/title/tt{i}".format(i=id)
+    gen = ', '.join([str(elem) for elem in genre])
+    url = info["full-size cover url"]
+    return {"title":title,"year":year, "link":imdbl, "genre":gen,"rating":rating,"image":url}
+    
 
 
 def encode_file_id(s: bytes) -> str:
