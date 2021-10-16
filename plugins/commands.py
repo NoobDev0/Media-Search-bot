@@ -5,6 +5,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from info import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION
 from utils import Media, get_file_details, get_size
 from pyrogram.errors import UserNotParticipant
+from .translation import Text
 logger = logging.getLogger(__name__)
 
 @Client.on_message(filters.command("start"))
@@ -93,7 +94,7 @@ async def start(bot, cmd):
         )
     else:
         await cmd.reply_text(
-            START_MSG,
+            Text.START_TEXT,
             parse_mode="Markdown",
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
