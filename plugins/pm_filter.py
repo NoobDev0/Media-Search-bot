@@ -295,7 +295,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 )
                 return
         elif query.data == "start":
-            buttons = [
+            buttons = 
         elif query.data == "about":
             buttons = [
                 [
