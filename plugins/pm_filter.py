@@ -4,6 +4,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQ
 from pyrogram import Client, filters
 import re
 from pyrogram.errors import UserNotParticipant
+from .translation import Text
 from utils import get_filter_results, get_file_details, is_subscribed, get_details
 BUTTONS = {}
 BOT = {}
@@ -296,9 +297,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "about":
             buttons = [
                 [
-                    InlineKeyboardButton('𝕄𝕠𝕧𝕚𝕖 𝕌𝕡𝕕𝕒𝕥𝕖𝕤', url='https://t.me/movieupdates3000'),
-                    InlineKeyboardButton('𝕊𝕠𝕦𝕣𝕔𝕖 ℂ𝕠𝕕𝕖', url='https://github.com/subinps/Media-Search-bot')
-                ]
+                    InlineKeyboardButton('𝕄𝕠𝕧𝕚𝕖 𝕌𝕡𝕕𝕒𝕥𝕖𝕤', url='https://t.me/movieupdates3000')
+                ],
+                [
+                    InlineKeyboardButton('𝔹𝕒𝕔𝕜', callback_data="features"),
+                    InlineKeyboardButton('ℂ𝕝𝕠𝕤𝕖', callback_data="
                 ]
             await query.message.edit(text="<b>Developer : <a href='https://t.me/M_VineshKumar'>Jonas</a>\nLanguage : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nSource Code : <a href='https://github.com/subinps/Media-Search-bot'>Click here</a>\nUpdate Channel : <a href='https://t.me/CinemaHaunter'>Cinema Haunter</a>\nServer : <a href='https://heroku.com'>Heroku</a></b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
