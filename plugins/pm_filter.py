@@ -294,6 +294,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     reply_markup=InlineKeyboardMarkup(buttons)
                 )
                 return
+        elif query.data == "start":
+            buttons = [
         elif query.data == "about":
             buttons = [
                 [
@@ -301,10 +303,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ],
                 [
                     InlineKeyboardButton('𝔹𝕒𝕔𝕜', callback_data="features"),
-                    InlineKeyboardButton('ℂ𝕝𝕠𝕤𝕖', callback_data="
+                    InlineKeyboardButton('ℂ𝕝𝕠𝕤𝕖', callback_data="close")
                 ]
-            await query.message.edit(text="<b>Developer : <a href='https://t.me/M_VineshKumar'>Jonas</a>\nLanguage : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nSource Code : <a href='https://github.com/subinps/Media-Search-bot'>Click here</a>\nUpdate Channel : <a href='https://t.me/CinemaHaunter'>Cinema Haunter</a>\nServer : <a href='https://heroku.com'>Heroku</a></b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
+            await query.message.edit(text="<b>Developer : <a href='https://t.me/M_VineshKumar'>Jonas</a>\nLanguage : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nSource Code : <a href='https://github.com/subinps/Media-Search-bot'>Click here</a>\nUpdate Channel : <a href='https://t.me/CinemaHaunter'>Cinema Haunter</a>\nServer : <a href='https://heroku.com'>Heroku</a></b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+        
+        elif query.data == "close":
+            await update.message.delete()
+
+        elif query.data ==     
 
 
         elif query.data.startswith("subinps"):
