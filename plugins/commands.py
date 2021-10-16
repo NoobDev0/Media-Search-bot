@@ -67,7 +67,7 @@ async def start(bot, cmd):
                 buttons = [
                     [
                         InlineKeyboardButton('🔎 𝕊𝕖𝕒𝕣𝕔𝕙 𝔸𝕘𝕒𝕚𝕟', switch_inline_query_current_chat=''),
-                        InlineKeyboardButton('📺 Daily Releases', url='https://t.me/Cinema_Haunter_Updates')
+                        InlineKeyboardButton('📺 𝔻𝕒𝕚𝕝𝕪 ℝ𝕖𝕝𝕖𝕒𝕤𝕖𝕤', url='https://t.me/Cinema_Haunter_Updates')
                     ]
                     ]
                 await bot.send_cached_media(
@@ -99,11 +99,15 @@ async def start(bot, cmd):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Search Here", switch_inline_query_current_chat=''),
-                        InlineKeyboardButton("Other Bots", url="https://t.me/subin_works/122")
+                        InlineKeyboardButton("📬 ℂ𝕙𝕒𝕟𝕟𝕖𝕝", url="https://t.me/CinemaHaunter"),
+                        InlineKeyboardButton("📧 𝔾𝕣𝕠𝕦𝕡", url="https://t.me/Cinema_Haunter")
                     ],
                     [
-                        InlineKeyboardButton("About", callback_data="about")
+                        InlineKeyboardButton("🎛 𝔽𝕖𝕒𝕥𝕦𝕣𝕖𝕤", callback_data="features"),
+                        InlineKeyboardButton("🎬 𝕊𝕖𝕒𝕣𝕔𝕙 𝕄𝕠𝕧𝕚𝕖𝕤", switch_inline_query_current_chat='') 
+                    ],
+                    [
+                        InlineKeyboardButton("📝 𝔸𝕓𝕠𝕦𝕥", callback_data="about")
                     ]
                 ]
             )
@@ -192,8 +196,8 @@ async def delete(bot, message):
 async def bot_info(bot, message):
     buttons = [
         [
-            InlineKeyboardButton('Update Channel', url='https://t.me/subin_works'),
-            InlineKeyboardButton('Source Code', url='https://github.com/subinps/Media-Search-bot')
+            InlineKeyboardButton('📺 𝕆𝕗𝕗𝕚𝕔𝕚𝕒𝕝 ℂ𝕙𝕒𝕟𝕟𝕖𝕝', url='https://t.me/CinemaHaunter'),
+            InlineKeyboardButton('📇 𝕊𝕠𝕦𝕣𝕔𝕖 ℂ𝕠𝕕𝕖', url='https://github.com/subinps/Media-Search-bot')
         ]
         ]
-    await message.reply(text="Language : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nSource Code : <a href='https://github.com/subinps/Media-Search-bot'>Click here</a>\nUpdate Channel : <a href='https://t.me/subin_works'>XTZ Bots</a> </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+    await message.reply(text="Language : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nSource Code : <a href='https://github.com/subinps/Media-Search-bot'>Click here</a>\nUpdate Channel : <a href='https://t.me/CinemaHaunter>Cinema Haunter</a> </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
