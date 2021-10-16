@@ -4,7 +4,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQ
 from pyrogram import Client, filters
 import re
 from pyrogram.errors import UserNotParticipant
-from utils import get_filter_results, get_file_details, is_subscribed, get_poster
+from utils import get_filter_results, get_file_details, is_subscribed, get_details
 BUTTONS = {}
 BOT = {}
 @Client.on_message(filters.text & filters.private & filters.incoming & filters.user(AUTH_USERS) if AUTH_USERS else filters.text & filters.private & filters.incoming)
@@ -79,7 +79,8 @@ async def filter(client, message):
             )
             poster=None
             if API_KEY:
-                poster=await get_poster(search)
+                info=await get_details(search)
+                poster=info["image"] 
             if poster:
                 await message.reply_photo(photo=poster, caption=f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
 
@@ -98,7 +99,8 @@ async def filter(client, message):
         )
         poster=None
         if API_KEY:
-            poster=await get_poster(search)
+            intel=await get_details(search)
+            poster=intel["image"]
         if poster:
             await message.reply_photo(photo=poster, caption=f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
         else:
@@ -143,7 +145,8 @@ async def group(client, message):
             )
             poster=None
             if API_KEY:
-                poster=await get_poster(search)
+                detail=await get_details(search)
+                poster=detail["image"]
             if poster:
                 await message.reply_photo(photo=poster, caption=f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
             else:
@@ -161,7 +164,8 @@ async def group(client, message):
         )
         poster=None
         if API_KEY:
-            poster=await get_poster(search)
+            meh=await get_details(search)
+            poster=meh["image"]
         if poster:
             await message.reply_photo(photo=poster, caption=f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
         else:
