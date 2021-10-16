@@ -295,23 +295,59 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 )
                 return
         elif query.data == "start":
-            buttons = 
-        elif query.data == "about":
-            buttons = [
-                [
-                    InlineKeyboardButton('𝕄𝕠𝕧𝕚𝕖 𝕌𝕡𝕕𝕒𝕥𝕖𝕤', url='https://t.me/movieupdates3000')
-                ],
-                [
-                    InlineKeyboardButton('𝔹𝕒𝕔𝕜', callback_data="features"),
-                    InlineKeyboardButton('ℂ𝕝𝕠𝕤𝕖', callback_data="close")
-                ]
+            buttons = [[
+                InlineKeyboardButton("📬 ℂ𝕙𝕒𝕟𝕟𝕖𝕝", url="https://t.me/CinemaHaunter"),
+                InlineKeyboardButton("📧 𝔾𝕣𝕠𝕦𝕡", url="https://t.me/Cinema_Haunter")
+            ],
+            [
+                InlineKeyboardButton("🎛 𝔽𝕖𝕒𝕥𝕦𝕣𝕖𝕤", callback_data="features"),
+                InlineKeyboardButton("🎬 𝕊𝕖𝕒𝕣𝕔𝕙 𝕄𝕠𝕧𝕚𝕖𝕤", switch_inline_query_current_chat='') 
+            ],
+            [
+                InlineKeyboardButton("📝 𝔸𝕓𝕠𝕦𝕥", callback_data="about")
+            ]]
+            
+            await update.message.edit_text(
+                TEXT.START_TEXT.format(update.from_user.mention),
+                reply_markup=InlineKeyboardMarkup(buttons),
+                parse_mode="html",
+                disable_web_page_preview=True
+            )
+                
 
+        elif query.data == "about":
+            buttons = [[
+                InlineKeyboardButton('𝕄𝕠𝕧𝕚𝕖 𝕌𝕡𝕕𝕒𝕥𝕖𝕤', url='https://t.me/movieupdates3000')
+            ],
+            [
+                InlineKeyboardButton('𝔹𝕒𝕔𝕜', callback_data="features"),
+                InlineKeyboardButton('ℂ𝕝𝕠𝕤𝕖', callback_data="close")
+            ]]
+            
             await query.message.edit(text="<b>Developer : <a href='https://t.me/M_VineshKumar'>Jonas</a>\nLanguage : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nSource Code : <a href='https://github.com/subinps/Media-Search-bot'>Click here</a>\nUpdate Channel : <a href='https://t.me/CinemaHaunter'>Cinema Haunter</a>\nServer : <a href='https://heroku.com'>Heroku</a></b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
         
         elif query.data == "close":
             await update.message.delete()
 
-        elif query.data ==     
+        elif query.data == "features":
+            buttons = [[
+                InlineKeyboardButton('𝔸𝕦𝕥𝕠 𝔽𝕚𝕝𝕥𝕖𝕣', callback_data="auto"),
+                InlineKeyboardButton('ℙ𝕞 𝔽𝕚𝕝𝕥𝕖𝕣', callback_data="filter")
+            ],
+            [
+                InlineKeyboardButton('𝕀𝕟𝕝𝕚𝕟𝕖 𝕊𝕖𝕒𝕣𝕔𝕙', callback_data="search"),
+                InlineKeyboardButton('𝕀𝕄𝔻𝕓 𝕀𝕟𝕗𝕠', callback_data="info")
+            ],
+            [
+                InlineKeyboardButton('𝔹𝕒𝕔𝕜', callback_data="start")
+            ]]
+
+            await update.message.edit_text(
+                Text.FEATURES.TEXT,
+                reply_markup=InlineKeyboardMarkup(buttons),
+                parse_mode="html",
+                disable_web_page_preview=True
+            )
 
 
         elif query.data.startswith("subinps"):
