@@ -81,6 +81,11 @@ async def filter(client, message):
             if API_KEY:
                 info=await get_details(search)
                 poster=info["image"] 
+                titlee=dict["title"]
+                yearr=dict["year"]
+                ratingg=dict["rating"]
+                genree=dict["genre"]
+                ratedd=dict["rated"]
             if poster:
                 await message.reply_photo(photo=poster, caption=f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
 
